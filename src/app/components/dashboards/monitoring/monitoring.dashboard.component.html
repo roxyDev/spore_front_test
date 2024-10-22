@@ -1,0 +1,22 @@
+<div class="layout-dashboard">
+
+    <div class="grid">
+        <div class="col-12 lg:col-12">
+            <div class="card">
+                <div class="flex justify-content-center align-items-center">
+                        <google-map 
+                        width="1200" 
+                        height="600" 
+                        [center]="center" 
+                        [zoom]="10"
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                            <map-marker *ngFor="let location of locations" [position]="location" [options]="markerOptions"></map-marker>
+                        </google-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
