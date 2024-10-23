@@ -2,20 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AbstractControlOptions, ValidationErrors, FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { MiscService } from 'src/app/service/misc.service';
-
 import { UserService } from 'src/app/service/user.service'; 
-//import { RoleService } from 'src/app/service/role.service';
-//import { BranchService} from 'src/app/service/branch.service';
-//import {UserBranchService} from 'src/app/service/userBranch.service';
-
 import { FileService } from 'src/app/service/file.service';
-
 import { MessageService  } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
-import { catchError  } from 'rxjs/operators';
-import { forkJoin, of } from 'rxjs';
-
-import { map } from 'rxjs/operators';
+import { SessionService } from 'src/app/service/session.service';
 
 @Component({
     templateUrl: './edit.users.component.html',
@@ -35,15 +26,13 @@ export class EditUsersComponent
 	image: any; //imagen que se muestra en el control
     objectURL: string = '';  //url de la imagen a cargar
 	deletedBranches = [];
-	
+	myProperty: string;
 	originalEmail:string;
 	
 	constructor(    
         private formBuilder: FormBuilder,
         private userService: UserService,
-        //private roleService: RoleService,
-		//private userBranchService: UserBranchService,
-        //private branchService: BranchService,
+        private sessionService:SessionService,
         private messageService: MessageService,
         private router: Router,		
 		private miscService:MiscService,
@@ -66,6 +55,8 @@ export class EditUsersComponent
 			userEmailStatus: ['unconfirmed',[Validators.required]],
 			useriSAdmin: [false,[Validators.required]],
         }, formOptions);
+		
+		this.myProperty = this.sessionService.getUseriSAdmin();
 		
 		this.formPass = this.formBuilder.group
 		({

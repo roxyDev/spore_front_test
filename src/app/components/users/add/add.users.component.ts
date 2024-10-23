@@ -6,9 +6,7 @@ import { MiscService } from 'src/app/service/misc.service';
 import { FileService } from 'src/app/service/file.service';
 import { MessageService  } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
-import { catchError  } from 'rxjs/operators';
-import { forkJoin, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { SessionService } from 'src/app/service/session.service';
 
 @Component({
     templateUrl: './add.users.component.html',
@@ -23,13 +21,15 @@ export class AddUsersComponent
     uploadedFiles: any[] = []; //lista de archivos por cargar
 	image: any; //imagen que se muestra en el control
     objectURL: string = '';  //url de la imagen a cargar
-	
+	myProperty: string;
+
 	constructor(    
         private formBuilder: FormBuilder,
         private userService: UserService,
         private messageService: MessageService,
         private router: Router,		
 		private miscService:MiscService,
+		private sessionService:SessionService,
 		private fileService:FileService
 		) 
     {}
@@ -46,6 +46,7 @@ export class AddUsersComponent
 			userEmailStatus: ['unconfirmed',[Validators.required]],
 			useriSAdmin: [false,[Validators.required]],
          }, formOptions);
+		 this.myProperty = this.sessionService.getUseriSAdmin();
 	}
 
     ngOnDestroy() 

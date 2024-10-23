@@ -57,20 +57,22 @@
 					</p-fileUpload>
 
 				</div>
-				<div class="field">
-					<label for="verified" class="font-semibold">Verificado</label>
-					<div>
-						<p-inputSwitch  inputId="switch1" trueValue="confirmed" falseValue="unconfirmed" formControlName="userEmailStatus" ></p-inputSwitch>
-					</div>
-				</div>
 
-				<div class="field">
-					<label for="useriSAdmin" class="font-semibold">Administrador</label>
-					<div>
-						<p-inputSwitch  inputId="useriSAdmin" formControlName="useriSAdmin" ></p-inputSwitch>
+				<div style="display: flex;">
+					<div class="field" style="width: 10rem; text-align: center;">
+						<label for="verified" class="font-semibold" >Verificado</label>
+						<div>
+							<p-inputSwitch  inputId="switch1" trueValue="confirmed" falseValue="unconfirmed" formControlName="userEmailStatus" ></p-inputSwitch>
+						</div>
+					</div>
+
+					<div *ngIf="myProperty === 'true'" class="field" style="width: 10rem; text-align: center;">
+						<label for="useriSAdmin" class="font-semibold">Administrador</label>
+						<div>
+							<p-inputSwitch  inputId="useriSAdmin" formControlName="useriSAdmin" ></p-inputSwitch>
+						</div>
 					</div>
 				</div>
-				
 				
 				<div class="col-12 flex justify-content-end mt-4">
 					<button pButton pRipple class="p-button-outlined w-8rem mr-3"  label="Cancelar"  (click)="cancel($event)" ></button>
