@@ -1,27 +1,48 @@
 # PrimeNG Diamond
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+This project was generated with template PrimeNG Diamond [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
-## Development server
+# Visualización de Vehículos en Tiempo Real
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+¡Bienvenido al proyecto de Visualización de Vehículos en Tiempo Real! Este proyecto te permite visualizar la ubicación de vehículos en tiempo real utilizando tecnologías modernas.
 
-## Code scaffolding
+## Requisitos Previos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu máquina:
 
-## Build
+- [Node.js](https://nodejs.org/) (incluye npm)
+- [Git](https://git-scm.com/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Instalación
 
-## Running unit tests
+Para clonar el repositorio y configurar el proyecto, sigue estos pasos:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona el repositorio:
 
-## Running end-to-end tests
+    ```bash
+    git clone https://github.com/roxyDev/spore_front_test.git
+    cd mi-repo
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2. Inicializa el proyecto:
 
-## Further help
+    ```bash
+    git init
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+## Ejecución
+
+Para ejecutar el proyecto, utiliza el siguiente comando:
+
+```bash
+ng serve
+```
+
+Luego, abre tu navegador y ve a http://localhost:4200.
+
